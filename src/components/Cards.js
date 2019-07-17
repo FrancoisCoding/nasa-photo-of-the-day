@@ -10,6 +10,11 @@ export default class Objects extends Component {
         ) : (
           <h1>Loading...</h1>
         )}
+        {this.props.data ? (
+          <h3>{this.props.data[0].date}</h3>
+        ) : (
+          <h1>Loading...</h1>
+        )}
         {/* Youtube Video */}
         {this.props.data ? (
           <iframe
@@ -19,6 +24,7 @@ export default class Objects extends Component {
             height="315"
             frameBorder="0"
             allowFullScreen
+            align="middle"
           />
         ) : (
           <h1>Loading...</h1>
