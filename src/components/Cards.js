@@ -29,6 +29,12 @@ export default class Objects extends Component {
         ) : (
           <h1>Loading...</h1>
         )}
+        {/* Description */}
+        {this.props.data ? (
+          <p>{this.props.data[0].explanation}</p>
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     );
   }
