@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+// Loading Screen on Page Load
 export default class PreLoadScreen extends Component {
   constructor(props) {
     super(props);
@@ -8,11 +9,14 @@ export default class PreLoadScreen extends Component {
     this.PreLoadScreen = React.createRef();
   }
   componentDidMount() {
+    // Setup for refs
     const PreLoadScreen = this.PreLoadScreen.current;
+    // Runs on load
     window.onload = function() {
       window.setTimeout(fadeout, 2500);
     };
 
+    // Removes Page using setTimeout
     function fadeout() {
       PreLoadScreen.style.display = "none";
     }

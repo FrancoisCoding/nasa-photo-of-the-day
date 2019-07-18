@@ -4,6 +4,7 @@ import Cards from "./components/Cards";
 import DatePicker from "react-datepicker";
 
 export default class Data extends Component {
+  // Holds State
   constructor(props) {
     super(props);
     this.state = {
@@ -13,10 +14,14 @@ export default class Data extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  // Function Run on Date Change
   handleChange(date) {
-    // this.setState({
-    //   startDate: date
-    // },()=> {});
+    this.setState(
+      {
+        startDate: date
+      },
+      () => {}
+    );
     setTimeout(
       axios
         .get(
@@ -33,6 +38,7 @@ export default class Data extends Component {
     );
   }
 
+  // Initial Data
   componentDidMount() {
     axios
       .get(
@@ -50,7 +56,8 @@ export default class Data extends Component {
   render() {
     return (
       <>
-        <h1>Select Date:</h1>{" "}
+        <h1>Select Date:</h1>
+        {/* Displays Calendar */}
         <DatePicker
           selected={this.state.startDate}
           onChange={this.handleChange}

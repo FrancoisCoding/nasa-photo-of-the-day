@@ -14,6 +14,7 @@ export default class Objects extends Component {
         {this.props.data[0].url.includes("image") ? (
           <img src={this.props.data[0].url} alt="Space Img" />
         ) : (
+          // Embeded Youtube Video
           <iframe
             title="video"
             src={this.props.data[0].url}
